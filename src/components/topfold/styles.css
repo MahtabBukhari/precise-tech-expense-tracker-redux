@@ -1,0 +1,22 @@
+
+
+.searchbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.searchfield{
+    border: none;
+    outline: none;
+    background-color: light;
+    width: 90%;
+    text-align: center;
+    margin-left: 2px;
+    height: 100%;
+}
+
+.againstSearchbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,0 +1,12 @@
+.home{
+    width: 50%;
+    margin: auto;
+}
+
+@media screen and (max-width:540px) {
+
+    .home{
+        width: 90%;
+    }
+    
+}

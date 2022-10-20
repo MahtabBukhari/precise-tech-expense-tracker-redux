@@ -1,10 +1,11 @@
 import React from 'react'
+import TopFold from '../../components/topfold'
 import './styles.css'
 
 const Home = () => {
   return (
-    <div>
-        <div>top of list</div>
+    <div className='home'>
+        <TopFold/>
         <div>list</div>
     </div>
   )

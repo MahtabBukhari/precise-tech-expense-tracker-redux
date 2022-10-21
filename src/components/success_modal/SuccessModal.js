@@ -20,12 +20,12 @@ const customStyles = {
   },
 };
 
-const SuccessModal = ({modalOpen}) => {
+const SuccessModal = ({modalOpen,title}) => {
 
   return (
     <Modal isOpen={modalOpen} style={customStyles} ariaHideApp={false}>
       <Card style={{margin:"0px",backgroundColor:"#71ccca",textAlign:"center",border:"none"}}>
-        <Card.Title>title</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Img  src={require('../../assets/images/added-image.png')} style={{height:"25vmax",margin:"auto"}} alt="immodal"/>
         <Card.Body >
         

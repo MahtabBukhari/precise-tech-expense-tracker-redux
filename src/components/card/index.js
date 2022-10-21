@@ -6,17 +6,21 @@ import {RiDeleteBin6Line} from 'react-icons/ri'
 import { useDispatch } from 'react-redux'
 import { deleteexpense } from '../../redux/actions/expenses'
 
-const Cards = ({item}) => {
+
+const Cards = ({item,deleteToast}) => {
   const dispatch= useDispatch()
   const handleDelete=()=>{
 
     dispatch(deleteexpense(item))
+    deleteToast();
+   
 
   }
-
+// npm monent is used here
   const time = moment(item.createdAt).fromNow()
   return (
     <Card style={{borderRight:`5px solid ${item.category.color}`,width:"90%",padding:"1vmax",margin:"1vmax"}}>
+           
       <Row >
         <Col className='col-lg-2 col-md-2 col-sm-2'>
           <img src={item.category.icon} alt="categoryImage" width="70vmax" />

@@ -37,7 +37,8 @@ const handleSubmit=()=>{
 
   dispatch(addexpense(data))
   setModalOpen(true)
-  console.log(data)
+ 
+  toast.success("Expenditure is added successfully!")
 
 }
 
@@ -57,7 +58,7 @@ theme="light"
 />
 
 
-<SuccessModal modalOpen={modalOpen}/>
+<SuccessModal title={title} modalOpen={modalOpen}/>
         <div className="form-item">
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>

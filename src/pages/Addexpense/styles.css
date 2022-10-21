@@ -1,0 +1,12 @@
+.addexpense{
+    width:50%;
+    margin: auto;
+}
+
+
+@media screen and (max-width:540px) {
+    .addexpense{
+        width: 90%;
+    }
+    
+}

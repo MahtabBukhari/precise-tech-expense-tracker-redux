@@ -1,9 +1,16 @@
 import React from 'react'
+import AddForm from '../../components/add-form';
+
+import TopFold from '../../components/topfold';
 import './styles.css'
 
 const Addexpense = () => {
   return (
-    <div>Addexpense</div>
+    <div className='addexpense'>
+    <TopFold/>
+    
+   <AddForm/>
+    </div>
   )
 }
 

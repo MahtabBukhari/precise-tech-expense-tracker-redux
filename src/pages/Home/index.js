@@ -1,4 +1,5 @@
 import React from 'react'
+import ExpenseList from '../../components/expenseList'
 import TopFold from '../../components/topfold'
 import './styles.css'
 
@@ -6,7 +7,7 @@ const Home = () => {
   return (
     <div className='home'>
         <TopFold/>
-        <div>list</div>
+        <ExpenseList/>
     </div>
   )
 }

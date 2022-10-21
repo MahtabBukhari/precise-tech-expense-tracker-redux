@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import Footer from './layouts/footer';
 import Header from './layouts/header';
 import Addexpense from './pages/Addexpense';
@@ -11,6 +12,7 @@ const App = () => {
   return (
     <div>
        <Header/>
+     
        <Routes>
         <Route exact path='/' element={<Home/>}/>
         <Route exact path='/add-expense' element={<Addexpense/>}/>

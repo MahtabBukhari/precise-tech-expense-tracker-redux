@@ -4,19 +4,25 @@ import {InputGroup,Form,Dropdown,Card, Button} from 'react-bootstrap';
 import './styles.css';
 import {SlPaperPlane} from 'react-icons/sl'
 import {categories as Cat} from '../categoryList' 
+import { useDispatch } from 'react-redux';
+
+import { addexpense } from '../../redux/actions/expenses';
+import { toast, ToastContainer } from 'react-toastify';
 
 const AddForm = () => {
+  const dispatch = useDispatch()
+
     const [title,setTitle]=useState('')
     const [amount,setAmount]=useState('')
     const [category,setCategory]=useState()
-    console.log(category)
+  
 
 
 const handleSubmit=()=>{
 
   // check validation
   if(title===''||amount===''||!category){
-    console.log('No data')
+    toast("Please enter valid data!")
     return
   }
 
@@ -27,6 +33,7 @@ const handleSubmit=()=>{
     createdAt:new Date()
   }
 
+  dispatch(addexpense(data))
   console.log(data)
 
 }
@@ -34,6 +41,18 @@ const handleSubmit=()=>{
 
   return (
     <div className='add-form'>
+      <ToastContainer
+position="bottom-right"
+autoClose={1500}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
         <div className="form-item">
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>

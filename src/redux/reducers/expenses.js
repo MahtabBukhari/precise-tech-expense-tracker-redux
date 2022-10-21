@@ -1,3 +1,4 @@
+import { expenseTypes } from "../action-types/expenses"
 
 const initialState={
     expenseList:[]
@@ -5,6 +6,14 @@ const initialState={
 
 export const expenseReducer=(state=initialState,{type,payload})=>{
     switch(type){
+        case expenseTypes.ADD_EXPENSE:
+            //we allways change state according to the reducer state
+            // As in that case initialState have a list if we want to add new data in list then
+            //we will change means add new data in list as below
+            return{
+                ...state,
+                expenseList:[payload,...state.expenseList]
+            }
         default:
             return state
 

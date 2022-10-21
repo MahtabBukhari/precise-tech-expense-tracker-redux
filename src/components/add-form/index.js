@@ -107,10 +107,10 @@ theme="light"
 
       <Dropdown.Menu  style={{backgroundColor:"white",color:"black",width:"50%"}} >
        {
-            Cat.map(cat=><Dropdown.Item key={cat.id} style={{borderRight:`5px solid ${cat.color}`}}  onClick={()=>{setCategory(cat.title)}}>
+            Cat.map(cat=><Dropdown.Item key={cat.id} className='dropdownItem' style={{borderRight:`5px solid ${cat.color}`}}  onClick={()=>{setCategory(cat.title)}}>
 
               <label > {cat.title}</label>
-              <img src={cat.icon} alt={cat.title} />
+              <img src={cat.icon} alt={cat.title} width="50vmax" />
               
               
               </Dropdown.Item>)
@@ -118,8 +118,8 @@ theme="light"
       </Dropdown.Menu>
     </Dropdown>
         </div>
-        <div className="submitData">
-          <Button variant='outline-light' style={{backgroundColor:"transparent",color:"black"}} onClick={handleSubmit}>add <SlPaperPlane/></Button>
+        <div className="submitData mt-auto ml-auto">
+          <Button variant='outline-light'  style={{backgroundColor:"transparent",color:"black"}} onClick={handleSubmit}>add <SlPaperPlane/></Button>
         </div>
     </div>
   )

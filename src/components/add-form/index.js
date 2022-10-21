@@ -8,6 +8,7 @@ import { useDispatch } from 'react-redux';
 
 import { addexpense } from '../../redux/actions/expenses';
 import { toast, ToastContainer } from 'react-toastify';
+import SuccessModal from '../success_modal/SuccessModal';
 
 const AddForm = () => {
   const dispatch = useDispatch()
@@ -15,6 +16,7 @@ const AddForm = () => {
     const [title,setTitle]=useState('')
     const [amount,setAmount]=useState('')
     const [category,setCategory]=useState()
+    const [modalOpen,setModalOpen]=useState(false)
   
 
 
@@ -34,6 +36,7 @@ const handleSubmit=()=>{
   }
 
   dispatch(addexpense(data))
+  setModalOpen(true)
   console.log(data)
 
 }
@@ -48,11 +51,13 @@ hideProgressBar={false}
 newestOnTop={false}
 closeOnClick
 rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
+
+
 theme="light"
 />
+
+
+<SuccessModal modalOpen={modalOpen}/>
         <div className="form-item">
         <InputGroup className="mb-3">
         <InputGroup.Text id="basic-addon1">Title</InputGroup.Text>

@@ -14,6 +14,14 @@ export const expenseReducer=(state=initialState,{type,payload})=>{
                 ...state,
                 expenseList:[payload,...state.expenseList]
             }
+        case expenseTypes.DELETE_EXPENSE:{
+            const updateList = state.expenseList.filter(item=> item.id!==payload.id)
+
+            return{
+                ...state,
+                expenseList:updateList
+            }
+        }
         default:
             return state
 

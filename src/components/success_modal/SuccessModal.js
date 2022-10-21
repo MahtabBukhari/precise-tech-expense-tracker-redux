@@ -15,14 +15,15 @@ const customStyles = {
     backgroundColor:'#71ccca',
     width:'30%',
     height:'90%',
-    borderRadius:'12px'
+    borderRadius:'12px',
+    ariaHideApp:false
   },
 };
 
 const SuccessModal = ({modalOpen}) => {
 
   return (
-    <Modal isOpen={modalOpen} style={customStyles}>
+    <Modal isOpen={modalOpen} style={customStyles} ariaHideApp={false}>
       <Card style={{margin:"0px",backgroundColor:"#71ccca",textAlign:"center",border:"none"}}>
         <Card.Title>title</Card.Title>
         <Card.Img  src={require('../../assets/images/added-image.png')} style={{height:"25vmax",margin:"auto"}} alt="immodal"/>

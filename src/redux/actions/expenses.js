@@ -6,3 +6,11 @@ export const addexpense=(data)=>{
         payload:data
     }
 }
+
+
+export const deleteexpense=(data)=>(
+    {
+        type:expenseTypes.DELETE_EXPENSE,
+        payload:data
+    }
+)

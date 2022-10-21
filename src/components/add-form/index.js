@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import {InputGroup,Form,Dropdown,Card, Button} from 'react-bootstrap';
+import {InputGroup,Form,Dropdown, Button} from 'react-bootstrap';
 import './styles.css';
 import {SlPaperPlane} from 'react-icons/sl'
 import {categories as Cat} from '../categoryList' 
@@ -17,7 +17,7 @@ const AddForm = () => {
     const [amount,setAmount]=useState('')
     const [category,setCategory]=useState()
     const [modalOpen,setModalOpen]=useState(false)
-  
+  console.log(category)
 
 
 const handleSubmit=()=>{
@@ -75,7 +75,7 @@ theme="light"
         </div>
         <div className="form-item">
         <InputGroup className="mb-3">
-        <InputGroup.Text id="basic-addon2">Amount</InputGroup.Text>
+        <InputGroup.Text id="basic-addon2">Amount ₨</InputGroup.Text>
         <Form.Control
           placeholder="Enter your Amount"
           aria-label="amount"
@@ -101,16 +101,16 @@ theme="light"
         <Dropdown>
       <Dropdown.Toggle variant="outline-light" style={{backgroundColor:"white",color:"black",width:"50%"}} id="dropdown-basic">
        {
-        category?category:"Category"
+        category?category.title:"Category"
        }
       </Dropdown.Toggle>
 
       <Dropdown.Menu  style={{backgroundColor:"white",color:"black",width:"50%"}} >
        {
-            Cat.map(cat=><Dropdown.Item key={cat.id} className='dropdownItem' style={{borderRight:`5px solid ${cat.color}`}}  onClick={()=>{setCategory(cat.title)}}>
+            Cat.map(category=><Dropdown.Item key={category.id} className='dropdownItem' style={{borderRight:`5px solid ${category.color}`}}  onClick={()=>setCategory(category)}>
 
-              <label > {cat.title}</label>
-              <img src={cat.icon} alt={cat.title} width="50vmax" />
+              <label > {category.title}</label>
+              <img src={category.icon} alt={category.title} width="30vmax" />
               
               
               </Dropdown.Item>)

@@ -14,3 +14,11 @@ export const deleteexpense=(data)=>(
         payload:data
     }
 )
+
+
+export const searchexpense=(query)=>(
+    {
+        type:expenseTypes.SEARCH_EXPENSE,
+        payload:query
+    }
+)

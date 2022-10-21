@@ -13,7 +13,8 @@ const initialStateList=()=>{
 }
 
 const initialState={
-    expenseList:initialStateList()
+    expenseList:initialStateList(),
+    query:''
 }
 
 export const expenseReducer=(state=initialState,{type,payload})=>{
@@ -37,6 +38,11 @@ export const expenseReducer=(state=initialState,{type,payload})=>{
                 ...state,
                 expenseList:updateList
             }
+        }
+    case expenseTypes.SEARCH_EXPENSE:
+        return{
+            ...state,
+            query:payload
         }
         default:
             return state

@@ -6,9 +6,9 @@ import './styles.css'
 
 const ExpenseList = () => {
 
-    const list = useSelector(state=>state.expenses.expenseList)
-    console.log(list)
-
+    const {expenseList:list,query} = useSelector(state=>state.expenses)
+    
+    const filterList = list.filter(item=> item.title.includes(query))
     const deleteToast=()=>{
         toast.success("Expensr. Card deleted successfully")
     }
@@ -25,8 +25,8 @@ rtl={false}
 
 
 theme="light"/>
-    {list.length?(
-    list.map(item=> <Cards key={item.id} deleteToast={deleteToast} item={item}/>    
+    {filterList.length?(
+    filterList.map(item=> <Cards key={item.id} deleteToast={deleteToast} item={item}/>    
         )
    
     ):<div className='emptyList'>
